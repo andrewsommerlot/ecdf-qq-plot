@@ -2,7 +2,7 @@
 #install.packages('ggplot2')
 #install.packages('reshape2')
 library(ggplot2)
-library(ecdf2)
+library(reshape2)
 
 #get some example data
 a <- runif(100, 0, 100)
