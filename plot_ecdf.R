@@ -17,8 +17,6 @@ plot_ecdf <- function(dat, legend_names = colnames(dat), title = 'ECDFs', xlab =
     colnames(ecdf_frames[[i]]) <- c('x', 'y')
   }
 
-  colnames(cdfs) <- c('x', 'y')
-
   melter <- data.frame(matrix(ncol = length(ecdf_frames) + 1, nrow = nrow(ecdf_frames[[1]])))
   melter[,1] <- ecdf_frames[[1]][,2]
   
