@@ -7,6 +7,9 @@ library(ggplot2)
 library(reshape2)
 library(Rmisc)
 
+# to change the size and theme of ggplots globally: 
+theme_set(theme_gray(base_size = 22))
+
 ###################################################################################
 # Example data for plot_ecdf example
 
