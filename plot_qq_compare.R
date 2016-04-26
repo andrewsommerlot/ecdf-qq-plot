@@ -3,15 +3,17 @@ plot_qq_compare <- function(dat1, out_type = 'display', color_ramp = c('green', 
   require(gridExtra)
   require(ggplot2)
   
+  norm_vec <- function(v) (v - min(v))/diff(range(v))
+  
   q1 <- list()
   for(i in 1:ncol(dat1)){
     q1[[i]] <-sort(dat1[,i])
   }
   
-  datin <- data.frame(q1[[i]], q2[[i]])
-  test <- seq(1, length(q2[[i]]), by = 1)
+  datin <- data.frame(x1 = q1[[1]], x2 = q1[[2]])
+  test <- seq(1, length(q1), by = 1)
   
-  cost <- abs(q2[[i]] - q1[[i]])
+  cost <- abs(datin[,2] - datin[,1])
   col_ramp <- colorRampPalette(color_ramp)(100)
   
   col_by_cost <- col_ramp[ceiling(norm_vec(cost)*99)+1]
