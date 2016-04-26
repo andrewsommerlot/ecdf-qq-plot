@@ -55,13 +55,13 @@ plot_qq_compare_multi <- function(dat_list, legend_names = colnames(dat_list[[1]
   
   if(output_type == 'display'){
     multiplot(plotlist=plots,cols = grid_cols)
-    stop('Printed plots to display device')
+    print('Printed plots to display device')
   }
   
   if(output_type == 'file'){
     labs = as.character(seq(1, length(plots), 1))
     invisible(mapply(ggsave, file=paste0(paste(out_dir, "plot-", sep = '/'), labs, ".png"), plot=plots))
-    stop(paste('Saved plots to ', out_dir, sep = ''))
+    print(paste('Saved plots to ', out_dir, sep = ''))
   }
   
 }
