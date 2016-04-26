@@ -37,6 +37,6 @@ plot_qq_compare_multi(dat_list, legend_names = c('corrected', 'uncorrected'))
 # Example data for plot_qq_comparison_multi plot example
 
 
-dat1 = data.frame(a = runif(100, 0, 100), b = runif(100, 0, 100), c = runif(100, 0, 100))
+dat1 = data.frame(a = runif(100, 0, 100), b = runif(100, 0, 100))
 
 plot_qq_compare(dat1)
